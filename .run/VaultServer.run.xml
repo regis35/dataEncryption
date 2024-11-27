@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="VaultServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="vault" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="bzh.redge.vault.VaultApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

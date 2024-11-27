@@ -1,0 +1,14 @@
+name: vault
+services:
+  vault:
+    image: hashicorp/vault:1.13.3
+    ports:
+      - "8300:8201"
+    environment:
+#      VAULT_ADDR: "http://0.0.0.0:8201"
+      VAULT_API_ADDR: "http://localhost:8300"
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./tmp/data:/vault/data
+      - ./tmp/config:/vault/config
