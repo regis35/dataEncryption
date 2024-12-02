@@ -1,1 +1,18 @@
-spring.application.name=vault
+spring:
+  config:
+    import: vault://
+  application:
+    name: vault
+  cloud:
+    vault:
+      fail-fast: true
+      host: localhost
+      port: 8200
+      scheme: http
+      connection-timeout: 5000
+      read-timeout: 15000
+      authentication: token
+      kv:
+        enabled: true
+
+
