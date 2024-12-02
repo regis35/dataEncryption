@@ -1,0 +1,15 @@
+name: vault-dev
+services:
+  vault:
+    image: vault:1.13.3
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_ADDR: "http://0.0.0.0:8201"
+      VAULT_API_ADDR: "http://localhost:8200"
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ../data/vault-dev/data:/vault/data
+      - ../data/vault-dev/config:/vault/config
+
