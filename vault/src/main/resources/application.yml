@@ -11,7 +11,7 @@ spring:
       scheme: http
       connection-timeout: 5000
       read-timeout: 15000
-      token: hvs.YEx0sELKwHFSzSQgj5e7aUhS
+      token:
       authentication: token
       kv:
         enabled: true
