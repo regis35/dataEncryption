@@ -1,24 +1,22 @@
+## Install vault (docker mode)
 
-netstat -lapute
+link to documentation https://hub.docker.com/r/hashicorp/vault
 
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
-tcp        0      0 0.0.0.0:8200            0.0.0.0:*               LISTEN      -
-tcp        0      0 127.0.0.11:36035        0.0.0.0:*               LISTEN      -
-tcp        0      0 :::8201                 :::*                    LISTEN      -
-udp        0      0 127.0.0.11:38529        0.0.0.0:*                           -
+access to vault admin -> http://localhost:8300/ui
+
+/ # vault status
+
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    1
+Threshold       1
+Version         1.18.1
+Build Date      2024-10-29T14:21:31Z
+Storage Type    inmem
+Cluster Name    vault-cluster-9b06dc98
+Cluster ID      4497c9c5-7212-580d-d318-e672d890b49b
+HA Enabled      false
 / # 
-
-
-/ # netstat -lapute
-Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
-tcp        0      0 127.0.0.11:36261        0.0.0.0:*               LISTEN      -
-udp        0      0 127.0.0.11:46583        0.0.0.0:*                           -
-/ # 
-
-
-docker run --cap-add=IPC_LOCK 
--e 'VAULT_LOCAL_CONFIG={"storage": {"file": {"path": "/vault/file"}}, 
-"listener": [{"tcp": { "address": "0.0.0.0:8200", "tls_disable": true}}], 
-"default_lease_ttl": "168h", "max_lease_ttl": "720h", "ui": true}' 
--p 8200:8200 hashicorp/vault server
