@@ -17,9 +17,8 @@ spring:
       server:
         native:
           search-locations: file:../data/properties
-        #          search-locations: file:/workspace/dev/perso/netflix/data
         bootstrap: true
-        prefix: /config
+        prefix: /
 
 management:
   server:

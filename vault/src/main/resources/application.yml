@@ -1,17 +1,20 @@
 spring:
   config:
-    import: vault://
+    import: optional:configserver:http://localhost:8000,optional:vault://
+
   application:
     name: vault
+
   cloud:
     vault:
       fail-fast: true
       host: localhost
-      port: 8200
+      port: 8300
       scheme: http
       connection-timeout: 5000
       read-timeout: 15000
       authentication: token
+      token: my-root-key
       kv:
         enabled: true
 

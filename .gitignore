@@ -1,3 +1,4 @@
 .idea
 **/target/
 /vault/src/main/resources/application-dev.yml
+/toto
